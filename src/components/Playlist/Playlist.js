@@ -5,7 +5,7 @@ import TrackList from "../TrackList/TrackList";
 export default function Playlist({ playlistName, playlistTracks }) {
   return (
     <div className="Playlist">
-      <input value="New Playlist" />
+      <input defaultValue={"New Playlist"} />
       {/* Pass the playlist tracks to the TrackList */}
       <TrackList tracks={playlistTracks} />
       <button className="Playlist-save">SAVE TO SPOTIFY</button>
