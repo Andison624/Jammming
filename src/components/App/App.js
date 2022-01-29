@@ -10,6 +10,10 @@ export default function App() {
   const [searchResults, setSearchResults] = useState([
     { name: "", artist: "", album: "", id: "" }
   ]);
+  const [playlistName, setPlaylistName] = useState('');
+  const [playlistTracks, setPlaylistTracks] = useState([
+    { name: "", artist: "", album: "", id: "" }
+  ]);
 
   return (
     <div>
@@ -21,7 +25,8 @@ export default function App() {
         <div className="App-playlist">
           {/* Pass the searchResults to the SearchResults component */}
           <SearchResults searchResults={searchResults} />
-          {/* <Playlist /> */}
+          {/* Pass the playlist name and tracks to the Playlist component */}
+          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
         </div>
       </div>
     </div>
