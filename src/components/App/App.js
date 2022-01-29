@@ -8,10 +8,7 @@ import Playlist from "../Playlist/Playlist";
 export default function App() {
   // When a user requests data from Spotify, the JSON response will include a set of song tracks. Each track will contain a field for name, artist, and album.
   const [searchResults, setSearchResults] = useState([
-    { name: "" },
-    { artist: "" },
-    { album: "" },
-    { id: "" },
+    { name: "", artist: "", album: "", id: "" }
   ]);
 
   return (
@@ -24,7 +21,7 @@ export default function App() {
         <div className="App-playlist">
           {/* Pass the searchResults to the SearchResults component */}
           <SearchResults searchResults={searchResults} />
-          <Playlist />
+          {/* <Playlist /> */}
         </div>
       </div>
     </div>

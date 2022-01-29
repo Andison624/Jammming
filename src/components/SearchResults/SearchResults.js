@@ -3,12 +3,12 @@ import TrackList from '../TrackList/TrackList'
 import './SearchResults.css'
 
 export default function SearchResults({searchResults}) {
-  // Pass the {searchResults} to the <TrackList>
-  const [tracks, setTracks] = useState(searchResults);
   return (
     <div className="SearchResults">
       <h2>Results</h2>
-      <TrackList tracks={tracks}/>
+      {/* <button onClick={() => console.log(searchResults)}>test</button> */}
+      {/* Pass the {searchResults} to the <TrackList> */}
+      <TrackList tracks={searchResults}/>
     </div>
   );
 };
