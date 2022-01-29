@@ -1,14 +1,22 @@
 import { useState } from "react";
 import "./Track.css";
 
-export default function Track({ track, onAdd }) {
+export default function Track({ track, onAdd, isRemoval, onRemove }) {
   // Use this method to add the track to the playlist
   const addTrack = () => {
     onAdd(track);
   };
+  // Removes a song from a user’s custom playlist when the user selects the - sign inside of a rendered track.
+  const removeTrack = () => {
+    onRemove(track);
+  };
   const renderAction = () => {
     if (isRemoval) {
-      return <button className="Track-action">-</button>;
+      return (
+        <button className="Track-action" onClick={removeTrack}>
+          -
+        </button>
+      );
     } else {
       return (
         <button className="Track-action" onClick={addTrack}>
@@ -27,7 +35,7 @@ export default function Track({ track, onAdd }) {
           {track.artist}|{track.album}
         </p>
       </div>
-      {renderAction}
+      {renderAction()}
     </div>
   );
 }
