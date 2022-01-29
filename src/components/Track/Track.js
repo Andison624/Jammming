@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Track.css";
 
 export default function Track({ track, onAdd }) {
+  // Use this method to add the track to the playlist
   const addTrack = () => {
     onAdd(track);
   };
@@ -26,7 +27,7 @@ export default function Track({ track, onAdd }) {
           {track.artist}|{track.album}
         </p>
       </div>
-      <button className="Track-action">{renderAction}</button>
+      {renderAction}
     </div>
   );
 }

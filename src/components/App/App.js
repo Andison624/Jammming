@@ -27,7 +27,7 @@ export default function App() {
       return ;
     }
     tracks.push(track);
-    setPlaylistTracks({tracks});
+    setPlaylistTracks(tracks);
   };
 
   return (

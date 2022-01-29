@@ -7,7 +7,7 @@ export default function SearchResults({searchResults, onAdd}) {
     <div className="SearchResults">
       <h2>Results</h2>
       {/* <button onClick={() => console.log(searchResults)}>test</button> */}
-      {/* Pass the {searchResults} to the <TrackList> */}
+      {/* Pass the {searchResults}, onAdd to the <TrackList>,set the isRemoval is false */}
       <TrackList
         tracks={searchResults}
         onAdd={onAdd}
