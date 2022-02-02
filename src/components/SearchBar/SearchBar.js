@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import './SearchBar.css';
+import { useState } from "react";
+import "./SearchBar.css";
 
-export default function SearchBar({onSearch}) {
-  const [term, setTerm] = useState('');
+export default function SearchBar({ onSearch }) {
+  const [term, setTerm] = useState("");
 
   const search = () => {
     onSearch(term);
@@ -12,7 +12,10 @@ export default function SearchBar({onSearch}) {
   };
   return (
     <div className="SearchBar">
-      <input placeholder="Enter A Song, Album, or Artist" onChange={handleTermChange} />
+      <input
+        onChange={handleTermChange}
+        placeholder="Enter A Song, Album, or Artist"
+      />
       <button className="SearchButton">SEARCH</button>
     </div>
   );
