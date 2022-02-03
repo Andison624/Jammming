@@ -1,5 +1,5 @@
 // Set the client ID variable to the value provided on application page.
-const cliendId = "6597b33b5d3440e093b545ff08b87647";
+const clientId = "6597b33b5d3440e093b545ff08b87647";
 const redirectUri = "http://localhost:3000/";
 // Hold the user’s access token
 let accessToken;
@@ -27,7 +27,7 @@ const Spotify = {
       return accessToken;
     } else {
       // Redirect users to this Uri
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${cliendId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
+      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
       window.location = accessUrl;
     }
   },
