@@ -1,5 +1,5 @@
 // Set the client ID variable to the value provided on application page.
-const clientId = "6597b33b5d3440e093b545ff08b87647";
+const clientId = "dfd87ff0e41d4aacb961ef97023ecfd7";
 const redirectUri = "http://localhost:3000/";
 // Hold the user’s access token
 let accessToken;
