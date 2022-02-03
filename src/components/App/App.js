@@ -43,7 +43,7 @@ export default function App() {
   };
   const search = (term) => {
     // Allows a user to enter a search parameter, receives a response from the Spotify API, and updates the searchResults state with the results from a Spotify request.
-    Spotify.search(term).then((searchResults) => {
+    Spotify.search(term).then(searchResults => {
       setSearchResults(searchResults);
     });
   };
