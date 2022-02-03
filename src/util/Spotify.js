@@ -1,5 +1,5 @@
 // Set the client ID variable to the value provided on application page.
-const clientId = "dfd87ff0e41d4aacb961ef97023ecfd7";
+const clientId = "433e2524a50941b1a3ceda449873caa9";
 const redirectUri = "https://andison624.github.io/Jammming/";
 // Hold the user’s access token
 let accessToken;
