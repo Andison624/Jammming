@@ -61,7 +61,7 @@ const Spotify = {
         })
     );
   },
-  savePlayList(name, trackUris) {
+  async savePlayList(name, trackUris) {
     // Check if there are values saved to the the name of the playlist and  array of track URIs. If not,return.
     if (!name || !trackUris.length) {
       return;
@@ -72,12 +72,11 @@ const Spotify = {
     const headers = { Authorization: `Bearer ${accessToken}` };
     // An empty variable for the user’s ID
     let userId;
-    // Make a request that returns the user’s Spotify username.
-    return (
-      fetch("https://api.spotify.com/v1/me", { headers: headers })
+    // Make a request that returns the user’s Spotify username.**
+    return fetch("https://api.spotify.com/v1/me", { headers: headers })
         // Convert the response to JSON and save the response id parameter to the user’s ID variable.
         .then((response) => response.json())
-        .then((jsonResponse) => {
+        .then(async (jsonResponse) => {
           userId = jsonResponse.id;
           return (
             // Use the (https://developer.spotify.com/documentation/web-api/reference/#/) to find a request that creates a new playlist.
@@ -95,18 +94,17 @@ const Spotify = {
                 return (
                   // Use  (https://developer.spotify.com/documentation/web-api/reference/#/) to find a request that adds tracks to a playlist.
                   fetch(
-                    `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`
-                  ),
-                  {
-                    headers: headers,
-                    method: "POST",
-                    body: JSON.stringify({ uris: trackUris }),
-                  }
+                    `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+                    {
+                      headers: headers,
+                      method: "POST",
+                      body: JSON.stringify({ uris: trackUris }),
+                    }
+                  )
                 );
               })
           );
         })
-    );
   },
 };
 

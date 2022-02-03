@@ -33,14 +33,20 @@ export default function App() {
     // Allows a learner to change the name of their playlist, and save the updated value to the App component’s state.
     setPlaylistName(name);
   };
+  // const savePlaylist = () => {
+  //   const trackUris = playlistTracks.map((track) => track.uri);
+  //   Spotify.savePlaylist(playlistName, trackUris).then(() => {
+  //     setPlaylistName("New playlist");
+  //     setPlaylistTracks([]);
+  //   });
+  // };
   const savePlaylist = () => {
     // Save a user’s playlist to their Spotify account and resets the state of the playlist name and tracks array.
-    const trackUris = playlistTracks.map((track) => track.uri);
-    Spotify.savePlaylist(playlistName, trackUris).then(() => {
-      setPlaylistName("New playlist");
-      setPlaylistTracks([]);
-    });
-  };
+    const trackURIs = playlistTracks.map(track => track.uri);
+    Spotify.savePlaylist(playlistName,trackURIs);
+    setPlaylistName('New Playlist');
+    setPlaylistTracks([]);
+  }
   const search = (term) => {
     // Allows a user to enter a search parameter, receives a response from the Spotify API, and updates the searchResults state with the results from a Spotify request.
     Spotify.search(term).then(searchResults => {
